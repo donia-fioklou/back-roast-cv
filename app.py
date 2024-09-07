@@ -4,20 +4,20 @@ import os
 from dotenv import load_dotenv
 from flask_cors import CORS
 
-# Charger les variables d'environnement
+# load the virtual environement variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
 CORS(app) 
-# Dossier pour stocker les CV téléchargés
+# file  for  storing uploaded files
 UPLOAD_FOLDER = './uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Assure-toi que le dossier existe
+# verifie if the upload folder exists, if not create it
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
-# Configuration de l'API clé
+# Configuration of the Gemini API
 genai.configure(api_key=os.getenv("API_KEY"))
 
 model = genai.GenerativeModel("gemini-1.5-flash")
@@ -34,17 +34,17 @@ def roaster(cv_file_path):
 
 @app.route('/roast_cv', methods=['POST'])
 def upload_cv():
-    # Vérifie si un fichier est bien dans la requête
+    # verifie if a file was uploaded
     if 'cv' not in request.files:
         return jsonify({'error': 'No file part in the request'}), 400
 
     file = request.files['cv']
 
-    # Vérifie si un fichier a bien été sélectionné
+    # verifie if a file was selected
     if file.filename == '':
         return jsonify({'error': 'No file selected'}), 400
 
-    # Sauvegarde le fichier dans le répertoire UPLOAD_FOLDER
+    # save the uploaded file to the upload folder
     if file:
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(filepath)
