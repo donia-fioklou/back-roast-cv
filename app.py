@@ -2,11 +2,13 @@ from flask import Flask, jsonify, request
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 # Charger les variables d'environnement
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app) 
 # Dossier pour stocker les CV téléchargés
 UPLOAD_FOLDER = './uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
