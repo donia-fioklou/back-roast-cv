@@ -19,13 +19,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 genai.configure(api_key=os.getenv("API_KEY"))
 
 model = genai.GenerativeModel("gemini-1.5-flash")
-@app.route('/')
-def accueil():
-    try:
-        response = model.generate_content("Write a story about a magic backpack.")
-        return jsonify({'response': response.text})
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
+
     
 def roaster(cv_file_path):
     prompt = "Analyze this CV with a humorous and constructive tone. Highlight any overused clichés, buzzwords, or unnecessary jargon. Feel free to give playful critiques on the job experiences, skills, or education, and make fun of overly generic statements like 'team player' or 'hard-working.' End with a piece of friendly advice on how to improve the CV."
