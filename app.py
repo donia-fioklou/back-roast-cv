@@ -24,7 +24,15 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 
     
 def roaster(cv_file_path):
-    prompt = "Analyze this CV with a humorous and constructive tone. Highlight any overused clichés, buzzwords, or unnecessary jargon. Feel free to give playful critiques on the job experiences, skills, or education, and make fun of overly generic statements like 'team player' or 'hard-working.' End with a piece of friendly advice on how to improve the CV."
+    prompt = """Take a deep dive into this CV and roast it thoroughly! Highlight every pain point and area that needs improvement, and add a humorous flair to make the feedback engaging.
+
+    Be sure to:
+
+    Point Out the Issues: Clearly identify and criticize every major and minor flaw in the CV, from formatting and design to content and clarity.
+    Add Humor: Infuse your feedback with a witty and light-hearted tone to make the critique entertaining and less daunting.
+    Encourage Improvement: Despite the humor, provide a sprinkle of encouragement and constructive advice. Let the person know that while their CV needs work, this feedback is a valuable step towards improvement.
+    Remember to keep the roast polished and structured, ensuring the feedback is both clear and constructive. The goal is to highlight the areas for improvement in a way that motivates rather than discourages."""
+
 
     cv_file = genai.upload_file(path=cv_file_path,
                                 display_name="Gemini 1.5 PDF")
