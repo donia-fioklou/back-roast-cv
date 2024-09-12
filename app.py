@@ -24,9 +24,7 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 
     
 def roaster(cv_file_path):
-    prompt = """Take a deep dive into this CV and roast it thoroughly! 
-    Point Out the Issues: Clearly identify and criticize every major and minor flaw in the CV, from formatting and design to content and clarity.
-     Infuse your feedback with a witty and  daunting manner. be fierce
+    prompt = """Take a deep dive into this CV and roast it thoroughly!
     Roast the person so bad"""
 
 
