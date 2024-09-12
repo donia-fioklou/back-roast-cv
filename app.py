@@ -29,9 +29,8 @@ def roaster(cv_file_path):
     Be sure to:
 
     Point Out the Issues: Clearly identify and criticize every major and minor flaw in the CV, from formatting and design to content and clarity.
-    Add Humor: Infuse your feedback with a witty and light-hearted tone to make the critique entertaining and less daunting.
-    Encourage Improvement: Despite the humor, provide a sprinkle of encouragement and constructive advice. Let the person know that while their CV needs work, this feedback is a valuable step towards improvement.
-    Remember to keep the roast polished and structured, ensuring the feedback is both clear and constructive. The goal is to highlight the areas for improvement in a way that motivates rather than discourages."""
+    Add Humor: Infuse your feedback with a witty and  daunting manner. be fierce
+    Roast the person so bad"""
 
 
     cv_file = genai.upload_file(path=cv_file_path,
