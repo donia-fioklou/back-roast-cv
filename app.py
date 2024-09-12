@@ -25,7 +25,7 @@ model = genai.GenerativeModel("gemini-1.5-flash")
     
 def roaster(cv_file_path):
     prompt = """Take a deep dive into this CV and roast it thoroughly!
-    Roast the person so bad"""
+    Roast  me so bad"""
 
 
     cv_file = genai.upload_file(path=cv_file_path,
