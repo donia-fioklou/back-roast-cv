@@ -24,8 +24,16 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 
     
 def roaster(cv_file_path):
-    prompt = """Take a deep dive into this CV and roast it thoroughly!
-    Roast  me so bad"""
+    prompt = """Tu es un expert en ressources humaines et en recrutement.
+Analyse le CV suivant en tenant compte des standards du marché actuel.
+
+Analyse ciblée : Identifie les points forts et les points faibles du CV.
+
+Conseils personnalisés : Fournis des recommandations précises adaptées au secteur d’activité et au niveau d’expérience du candidat.
+
+Optimisation ATS : Vérifie si le CV est compatible avec les systèmes de suivi des candidatures (ATS) et propose des améliorations pour passer ces filtres.
+
+Suggestions pratiques : Propose des conseils concrets (formulation, mise en valeur des compétences, choix des mots-clés, structure)."""
     #prompt = """Plonge en profondeur dans ce CV et critique-le sévèrement ! Critique-moi à fond."""
 
 
